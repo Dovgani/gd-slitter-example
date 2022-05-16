@@ -1,0 +1,681 @@
+<gd-splitter [Settings]="splitterMain">
+  <div panel="top">
+      <gd-ribbon #ribbon [gd-tooltip]=ribbon (ribbonClick)="onRibbonClick($event)">
+
+          <div id="ribbon"> 
+      
+              <span class="ribbon-window-title" style="height:0; font-weight:700; font-size:17px">F o r m&#160;&#160;&#160;D e s i g n e r</span>
+      
+              <div class="ribbon-tab home" id="home-tab">
+                  <span class="ribbon-title" style="height:15px">Home</span>
+                  <div class="ribbon-backstage"  >
+                      <div class="ribbon-button button big" style="float:left;  margin: 0 0 0 4px; overflow:hidden; height: 58px; margin-top:8px;" id="open-active-btn">
+                          <img src="./assets/ribbon/icons/normal/open-page.png" alt="Open" style="float:left; display:block;" />
+                          <span class="label">Open</span>
+                          <span class="desc">Last Used<br/>Form.</span>
+                      </div>
+                      <br/>
+                      <div class="ribbon-button button big" style="float:left; overflow:hidden; height: 58px; margin-left:20px; margin-top:-6px;" id="default-settings-btn">
+                          <img src="./assets/ribbon/icons/normal/Settings.png" alt="Save" style="float:left; display:block;" />
+                          <span class="label">Settings</span>
+                          <span class="desc">Application default<br/>settings.</span>
+                      </div>
+                      <br/>
+                      <div class="ribbon-button button big" style="float:left; overflow:hidden; height: 58px; margin-left:20px; margin-top:-20px;"  id="security-rules-btn">
+                          <img src="./assets/ribbon/icons/normal/Users32.png" alt="Save" style="float:left; display:block;" />
+                          <span class="label">Security</span>
+                          <span class="desc">Set Users Access<br/>Security Rules.</span>
+                      </div>
+                      <!-- <br/>
+                      <div class="ribbon-button button big" style="float:left; overflow:hidden; height: 58px; margin-left:20px; margin-top:-34px;"  id="3d-btn">
+                          <img src="./assets/ribbon/icons/normal/Cube32.png" alt="Save" style="float:left; display:block;" />
+                          <span class="label">3D</span>
+                          <span class="desc">Show Application<br/>3D Features.</span>
+                      </div> -->
+                  </div>
+              </div>
+      
+              <div class="ribbon-tab" id="common-tab">
+                  <span class="ribbon-title">Common</span>
+      
+                  <div class="ribbon-section">
+                      <span class="section-title" style="font-size: 9.5px; font-style: italic; height: 14px; margin-left:-5px;">
+                          <div style="padding: 2px 0 0 0;">Info</div>
+                      </span>
+                      <div style="display: inline-block; margin: 0 3px 0 0;">
+                          <table style="padding: 0; margin: 0; border-spacing: 0; border: none;">
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="margin: 1px 0 4px 0; width:35px">User</div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="padding: 1px 0 2px 4px; margin-top: -1px; border: 0.5px solid #bbb; border-radius: 3px; width:120px; height:16px; font-style: italic;">
+                                          {{ActiveUser}}
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="margin: 1px 0 0 4px; width:65px">Organization</div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="padding: 1px 0 2px 4px; margin-top: -1px; border: 0.5px solid #bbb; border-radius: 3px; width:120px; height:16px; font-style: italic;">
+                                          {{Organization}}
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr style="padding: 0; margin: 0; border: none;">
+      
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="margin: 3px 0 4px 0; width:35px">Mode</div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="padding: 1px 0 2px 4px; margin-top: 2px; border: 0.5px solid #bbb; border-radius: 3px; width:120px; height:16px; font-style: italic;">
+                                          {{Mode}}
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="margin: 2px 0 0 4px; width:45px">Package</div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="padding: 1px 0 2px 4px; margin-top: 1px; border: 0.5px solid #bbb; border-radius: 3px; width:120px; height:16px; font-style: italic;">
+                                          {{Package}}
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="margin: 1px 0 0 0; width:35px">Action</div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="padding: 2px 0 2px 4px; margin-top: 2px; border: 0.5px solid #bbb; border-radius: 3px; width:120px; height:16px; font-style: italic;">
+                                          {{Action}}
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="margin: 1px 0 0 5px;">Form</div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div style="padding: 1px 0 3px 4px; margin-top: 1px; border: 0.5px solid #bbb; border-radius: 3px; width:120px; height:16px; font-style: italic;">
+                                          {{Form}}
+                                      </div>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>                
+      
+                  <div class="ribbon-section">
+                      <span class="section-title" style="font-size: 9.5px; font-style: italic; height: 14px;"><div style="padding: 2px 0 0 0;">Dictionaries</div></span>
+                      <div style="display: inline-block; margin: 0 3px 0 4px;">
+                          
+                          <div class="ribbon-button ribbon-button-large" id="users-btn">
+                              <span class="button-title">Users</span>
+                              <span class="button-help">This button will open users grid.<br/>This button will open users grid.<br/>This button will open users grid. 12345 12345<br/>This button will open users grid.</span>
+                              <img class="ribbon-icon ribbon-normal" src="assets/ribbon/icons/normal/Users32.png" />
+                              <img class="ribbon-icon ribbon-hot" src="assets/ribbon/icons/hot/Users32.png" />
+                              <img class="ribbon-icon ribbon-disabled" src="assets/ribbon/icons/disabled/Empty.png" />
+                          </div> 
+                          <table style="padding: 0; margin: 0; border-spacing: 0; border: none;">
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="database-btn">
+                                          <span class="button-title">Database</span>
+                                          <span class="button-help">Database.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Database.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Database.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Database.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="vendors-btn">
+                                          <span class="button-title">Clients</span>
+                                          <span class="button-help">Clients</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Vendors.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Vendors.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/run.png" />
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="templates-btn">
+                                          <span class="button-title">Templates</span>
+                                          <span class="button-help">Templates</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Project.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Project.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/run.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+      <!-- split button example -->                                        
+                                      <!-- <gd-ribbonSplitButton class="ribbon-split-button" id="styles-btn" (onSplitButtonClick)="onSplitButtonClick($event)"
+                                                  [CommandImage]="'./assets/ribbon/icons/normal/Styles.png'" 
+                                                  [CommandText]="'Styles'" 
+                                                  [CommandWidth]=75 
+                                                  [CommandAreaWidth]=75 
+                                                  [CommandAreaHeight]=49>
+                                          <li>
+                                              <div style="float: left; margin: 1px 2px 0 1px"><img src='./assets/ribbon/icons/normal/Styles.png'/></div>
+                                              <div style="float: left; font-size: 10px; margin: 3px 0 0 2px">Tree</div>
+                                          </li>
+                                          <li>
+                                              <div style="float: left; margin: 1px 2px 0 1px"><img src='./assets/ribbon/icons/normal/Styles.png'/></div>
+                                              <div style="float: left; font-size: 10px; margin: 3px 0 0 2px">Grid</div>
+                                          </li>
+                                      </gd-ribbonSplitButton> -->
+      
+                                      <div class="ribbon-button ribbon-button-small" id="styles-btn">
+                                          <span class="button-title">Styles</span>
+                                          <span class="button-help">Styles.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Styles.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Styles.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/run.png" />
+                                      </div>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>                
+                  </div>
+      
+                  <div class="ribbon-section">
+                      <span class="section-title" style="font-size: 9.5px; font-style: italic; height: 14px;">
+                          <div style="padding: 2px 0 0 0;">Tools</div>
+                      </span>
+                      <div style="display: inline-block; margin: 0 3px 0 4px;">
+                          <div class="ribbon-button ribbon-button-large" id="text-options-btn">
+                              <span class="button-title">Text<br/>Options</span>
+                              <span class="button-help">Text Options for Shapes and Polygons.</span>
+                              <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Text32.png" />
+                              <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Text32.png" />
+                              <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Text32.png" />
+                          </div>
+                          <table style="padding: 0; margin: 0; border-spacing: 0; border: none;">
+                          <tr style="padding: 0; margin: 0; border: none;">
+                              <td style="padding: 0; margin: 0; border: none;">
+                                  <div class="ribbon-button ribbon-button-small" id="undo-btn">
+                                      <span class="button-help">Undo.</span>
+                                      <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Undo.png" />
+                                      <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Undo.png" />
+                                      <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Undo.png" />
+                                  </div>
+                              </td>
+                              <td style="padding: 0; margin: 0; border: none; width: 16px">
+                                  <div class="ribbon-button ribbon-button-small" id="redo-btn">
+                                      <span class="button-help">Redo.</span>
+                                      <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Redo.png" />
+                                      <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Redo.png" />
+                                      <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Redo1.png" />
+                                  </div>
+                              </td>
+                              <td style="padding: 0; margin: 0; border: none; width: 16px">
+                                  <div class="ribbon-button ribbon-button-small" id="select-in-order-btn">
+                                      <span class="button-help">Select only Shapes In Order.</span>
+                                      <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/SelectInOrder.png" />
+                                      <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/SelectInOrder.png" />
+                                      <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/SelectInOrder1.png" />
+                                  </div>
+                              </td>
+                              <td style="padding: 0; margin: 0; border: none;">
+                                  <div class="ribbon-button ribbon-button-small" id="select-shapes-btn">
+                                      <span class="button-help">Select only Shapes.</span>
+                                      <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Selection.png" />
+                                      <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Selection.png" />
+                                      <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Selection.png" />
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr style="padding: 0; margin: 0; border: none;">
+                              <td style="padding: 0; margin: 0; border: none;">
+                                  <div class="ribbon-button ribbon-button-small" id="search-btn">
+                                      <span class="button-help">Search Custom ID.</span>
+                                      <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Search.png" />
+                                      <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Search.png" />
+                                      <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Search.png" />
+                                  </div>
+                              </td>
+                              <td colspan="3" style="padding: 0; margin: 0; border: none; width: 60px">
+                                  <div style="padding: 2px 0 2px 4px; background: #eee; margin: 1px 0 0 1px; border: 0.5px solid #bbb; border-radius: 3px; height: 15px; width:77px">
+                                      <!-- <div style="padding: 2px 0 2px 4px; background: #eee; margin: 1px 0 0 1px; border: 0.5px solid #bbb; border-radius: 3px; height: 15px; width:77px" (click)="onSetCustomIDClick($event)"> -->
+                                          <input id="searchCustomID" class="ribbonInput" type="text" style="border: none; background: transparent; width: 100%;" [(ngModel)]="SearchCustomID">
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr style="padding: 0; margin: 0; border: none;">
+                              <td style="padding: 0; margin: 0; border: none;">
+                                  <div class="ribbon-button ribbon-button-small" id="set-custom-id-btn">
+                                      <span class="button-help">Set Custom ID.</span>
+                                      <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Number.png" />
+                                      <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Number.png" />
+                                      <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Number.png" />
+                                  </div>
+                              </td>
+                              <td colspan="3" style="padding: 0; margin: 0; border: none;">
+                                  <div style="padding: 2px 0 2px 4px; background: #eee; margin: 1px 0 0 1px; border: 0.5px solid #bbb; border-radius: 3px; height: 15px; width:77px">
+                                      <!-- <div style="padding: 2px 0 2px 4px; background: #eee; margin: 1px 0 0 1px; border: 0.5px solid #bbb; border-radius: 3px; height: 15px; width:77px" (click)="onSetCustomIDClick($event)"> -->
+                                          {{CustomID}}
+                                  </div>
+                              </td>
+                          </tr>
+                          </table>
+                      </div>
+                  </div>
+
+                  <div class="ribbon-section">
+                      <span class="section-title" style="font-size: 9.5px; font-style: italic; height: 14px; margin-left:-5px;">
+                          <div style="padding: 2px 0 0 0;">Actions</div>
+                      </span>
+                      <div style="display: inline-block; margin: 0 3px 0 4px;">
+                          <div class="ribbon-button ribbon-button-large" id="text-add-btn">
+                              <span class="button-title">Add<br/>Text</span>
+                              <span class="button-help">Add Text.</span>
+                              <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Text32.png" />
+                              <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Text32.png" />
+                              <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Text32.png" />
+                          </div>
+
+                          <table style="padding: 0; margin: 0; border-spacing: 0; border: none;">
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="container-add-btn">
+                                          <span class="button-help">Add Container.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Radio.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Radio.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Radio.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="shape-add-btn">
+                                          <span class="button-help">Add Shape.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Shape.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Shape.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Shape.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="polygon-add-btn">
+                                          <span class="button-help">Add Polygon.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Polygon.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Polygon.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Polygon.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="block-add-btn">
+                                          <span class="button-help">Add Block.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Block.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Block.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Block.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="block-create-btn">
+                                          <span class="button-help">Create Template Block.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Block.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Block.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Block.png" />
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="dim-add-btn">
+                                          <span class="button-help">Add Dimension.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/BulletOrange.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/BulletOrange.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/BulletOrange.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="seg-add-btn">
+                                          <span class="button-help">Add Serment.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Segment.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Segment.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Segment.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="arc-add-btn">
+                                          <span class="button-help">Add Arc.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/BulletOrange.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/BulletOrange.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/BulletOrange.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="polyline-add-btn">
+                                          <span class="button-help">Add Polyline.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/BulletOrange.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/BulletOrange.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/BulletOrange.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small disabled" id="reserved1-add-btn">
+                                          <span class="button-help">Reserved.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Empty.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Empty.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Empty.png" />
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="wall-gondola-add-btn">
+                                          <span class="button-help">Add Wall Gondola.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/BulletOrange.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/BulletOrange.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/BulletOrange.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="callout-add-btn">
+                                          <span class="button-help">Add Callout Shape.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Callout.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Callout.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Callout.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="small-text-add-btn">
+                                          <span class="button-help">Add Text.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Text.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Text.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Text.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small disabled" id="reserved2-add-btn">
+                                          <span class="button-help">Reserved.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Empty.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Empty.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Empty.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small disabled" id="reserved3-add-btn">
+                                          <span class="button-help">Reserved.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Empty.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Empty.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Empty.png" />
+                                      </div>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>                
+                  </div>
+
+                  <div class="ribbon-section">
+                      <span class="section-title" style="font-size:10px; font-style: italic;">Layout</span>
+                      <div style="display: inline-block;margin: 0 0 0 5px;">
+                          <table style="padding: 0; margin: 0; border-spacing: 0; border: none;">
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="text-left-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/LeftText.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/LeftText.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/LeftText.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="text-center-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/CenterText.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/CenterText.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/CenterText.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="text-right-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/RightText.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/RightText.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/RightText.png" />
+                                      </div>
+                                  </td>
+
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="text-justify-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/JustifyText.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/JustifyText.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/JustifyText.png" />
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="align-left-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/AlignLeft.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/AlignLeft.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/AlignLeft.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="align-vertical-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/AlignVertical.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/AlignVertical.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/AlignVertical.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="align-right-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/AlignRight.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/AlignRight.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/AlignRight.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="align-top-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/AlignTop.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/AlignTop.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/AlignTop.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="align-horiz-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/AlignHoriz.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/AlignHoriz.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/AlignHoriz.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="align-bottom-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/AlignBottom.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/AlignBottom.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/AlignBottom.png" />
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="copy-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Copy16.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Copy.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Copy16.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="cut-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Cut16.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Cut16.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Cut16.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="paste-btn">
+                                          <span class="button-help">Undo.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/Paste16.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/Paste16.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/Paste16.png" />
+                                      </div>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div> 
+
+                  <!-- Zoom Start -->
+                  <div class="ribbon-section" style="width: 55px;">
+                      <span class="section-title" style="font-size: 10px; font-style: italic; height: 14px;">Zoom</span>
+                      <div style="display: inline-block;">
+                          <table style="padding: 0; margin: 0; border-spacing: 0; border: none; width: 50px;">
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="zoom-in-btn">
+                                          <span class="button-help">Zoom In action.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/ZoomIn.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/ZoomIn.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/ZoomToDefault.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="zoom-out-btn">
+                                          <span class="button-help">Zoom Out action.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/ZoomOut.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/ZoomOut.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/ZoomToDefault.png" />
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="zoom-fit-btn">
+                                          <span class="button-help">Zoom To Fit action.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/ZoomToFit.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/ZoomToFit.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/ZoomToDefault.png" />
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="zoom-to-selected-btn">
+                                          <span class="button-help">Zoom To Selection action.</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/ZoomToSelection.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/ZoomToSelection.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/ZoomToDefault.png" />
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td colspan="2" style="padding: 0; margin: 0; border: none;">
+                                      <div class="ribbon-button ribbon-button-small" id="zoom-default-btn">
+                                          <span class="button-title" style="font-size:9px; padding-top: 3px; display: block;">100%&nbsp;</span>
+                                          <span class="button-help">No Zoom (set 100%).</span>
+                                          <img class="ribbon-icon ribbon-normal" src="./assets/ribbon/icons/normal/ZoomToDefault.png" />
+                                          <img class="ribbon-icon ribbon-hot" src="./assets/ribbon/icons/hot/ZoomToDefault.png" />
+                                          <img class="ribbon-icon ribbon-disabled" src="./assets/ribbon/icons/disabled/ZoomToDefault.png" />
+                                      </div>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>
+                  <!-- Zoom End -->                    
+
+                  <div class="ribbon-section">
+                      <span class="section-title" style="font-size: 9.5px; font-style: italic; height: 14px;">
+                          <div style="padding: 2px 0 0 0;">Drawing Info</div>
+                      </span>
+                      <div style="display: inline-block; margin: 0 3px 0 4px;">
+                          <table style="padding: 0; margin: 0; border-spacing: 0; border: none;">
+                              <tr style="padding: 0; margin: 0; border: none;">
+                                  <td style="padding: 0; margin: 0; border: 0px solid black;">
+                                      <div class="ribbon-button ribbon-button-small disabled" id="x-btn" style="width:76px">
+                                          <span class="button-title" style="display: block; text-align:end">{{PosX}}</span>
+                                          <span class="button-help">This mouse pos.</span>
+                                          <div class="ribbon-icon ribbon-normal"  >X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-hot"     >X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-disabled">X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: 0px solid black;">
+                                      <div class="ribbon-button ribbon-button-small disabled" id="x-btn" style="width:100px">
+                                          <span class="button-title" style="display: block; text-align:end">{{OffsetX}}</span>
+                                          <span class="button-help">This drawing offset.</span>
+                                          <div class="ribbon-icon ribbon-normal"  >Offset.X&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-hot"     >Offset.X&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-disabled">Offset.X&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr style="padding: 0; margin: 0; border: none;;">
+                                  <td style="padding: 0; margin: 0; border: 0px solid black;">
+                                      <div class="ribbon-button ribbon-button-small disabled" id="y-btn" style="width:76px">
+                                          <span class="button-title" style="display: block; text-align:end">{{PosY}}</span>
+                                          <span class="button-help">This mouse pos.</span>
+                                          <div class="ribbon-icon ribbon-normal"  >Y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-hot"     >Y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-disabled">Y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: 0px solid black;">
+                                      <div class="ribbon-button ribbon-button-small disabled" id="x-btn" style="width:100px">
+                                          <span class="button-title" style="display: block; text-align:end">{{ScrollX}}</span>
+                                          <span class="button-help">This drawing offset.</span>
+                                          <div class="ribbon-icon ribbon-normal"  >Scroll.X&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-hot"     >Scroll.X&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-disabled">Scroll.X&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr style="padding: 0; margin: 0; border: none;;">
+                                  <td style="padding: 0; margin: 0; border: none;;">
+                                      <div class="ribbon-button ribbon-button-small disabled" id="y-btn" style="width:76px">
+                                          <span class="button-title" style="display: block; text-align:end">{{Scale}}</span>
+                                          <span class="button-help">This canvas scale.</span>
+                                          <div class="ribbon-icon ribbon-normal"  >Scale&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-hot"     >Scale&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-disabled">Scale&nbsp;=&nbsp;</div>
+                                      </div>
+                                  </td>
+                                  <td style="padding: 0; margin: 0; border: 0px solid black;">
+                                      <div class="ribbon-button ribbon-button-small disabled" id="x-btn" style="width:100px">
+                                          <span class="button-title" style="display: block; text-align:end">{{ScrollY}}</span>
+                                          <span class="button-help">This drawing offset.</span>
+                                          <div class="ribbon-icon ribbon-normal"  >Scroll.Y&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-hot"     >Scroll.Y&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                          <div class="ribbon-icon ribbon-disabled">Scroll.Y&nbsp;&nbsp;&nbsp;=&nbsp;</div>
+                                      </div>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>                
+              </div>
+      
+              <div class="ribbon-tab" id="about-tab">
+                  <span class="ribbon-title" style="height:15px">About</span>
+              </div>
+      
+              <div class="ribbon-tab" id="registration-tab">
+                  <span class="ribbon-title" style="height:15px">Registration</span>
+              </div> 
+      
+          </div> 
+      
+      </gd-ribbon>       
+  </div>   
+  <div panel="left" [ngStyle]="{'height': 'calc(100% - 5px)' }">
+  </div>   
+  <div panel="right" [ngStyle]="{'height': 'calc(100% - 5px)' }">
+  </div>   
+  <div panel="bottom" [ngStyle]="{ 'height': 'calc(100% - 5px)' }">
+      <div [ngStyle]="{ 'border' : '1px #ddd solid', 'border-radius' : '4px', 'margin': '1px', 'overflow': 'hidden', 'height': '100%' }">
+          <gd-exceptions #exceptions
+                         [Root]=this 
+                         [Exceptions]="Exceptions">
+          </gd-exceptions>     
+      </div>
+  </div>   
+  <div panel="center" [ngStyle]="{'height': 'calc(100% - 4px)' }">
+      <div [ngStyle]="{ 'border' : '1px #ddd solid', 'border-radius' : '4px', 'margin': '1px', 'overflow' : 'hidden', 'height': '100%' }"> 
+      </div> 
+  </div>    
+</gd-splitter>  

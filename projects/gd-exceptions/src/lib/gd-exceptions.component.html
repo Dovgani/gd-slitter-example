@@ -1,0 +1,34 @@
+<div style="height: 100%;">
+    <gd-tabs [HeaderLayout]="'BottomTop'" [Active]="'Exceptions'">
+
+        <div>
+            <div>Messages</div>
+            <div>Exceptions</div>
+        </div>
+
+        <div class="gd-tab-content">
+            <div class="gd-massage-container">  
+                <h3>Paris</h3>
+                <p>Paris is the capital city of France.</p>
+            </div>
+        </div>
+
+        <div class="gd-tab-content" style="height: calc(100% - 26px);">
+            <div class="gd-exceptions-container">  
+                <ol class="gd-exceptions">
+                    <div *ngFor="let exception of Exceptions">
+                
+                        <li [ngClass]="(exception.id == selected?.id) ? 'selected' : ''" (mousedown)="onMouseDown($event, exception)">
+                            <div style="padding : 0 3px 0 3px;">
+                                <div style="float: left; pointer-events: none; width: 100%;">
+                                    {{exception.id}}.&nbsp;&nbsp;&nbsp;{{exception.project}}&nbsp;&nbsp;{{exception.description}} 
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+    
+                </ol> 
+            </div>  
+        </div>
+    </gd-tabs>
+</div>

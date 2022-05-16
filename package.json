@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -18,11 +19,18 @@
     "@angular/platform-browser": "~11.2.6",
     "@angular/platform-browser-dynamic": "~11.2.6",
     "@angular/router": "~11.2.6",
+    "gd-common": "file:../gd-workspace/dist/gd-common/gd-common-2.0.0.tgz",
+    "gd-ribbon": "file:../gd-workspace/dist/gd-ribbon/gd-ribbon-2.0.0.tgz",
+    "gd-splitter": "file:../gd-workspace/dist/gd-splitter/gd-splitter-2.0.0.tgz",
+    "gd-tabs": "file:../gd-workspace/dist/gd-tabs/gd-tabs-2.0.0.tgz",
+    "gd-tooltip": "file:../gd-workspace/dist/gd-tooltip/gd-tooltip-2.0.0.tgz",
+    "gd-window": "file:../gd-workspace/dist/gd-window/gd-window-2.0.0.tgz",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1102.18",
     "@angular/cli": "~11.2.5",
     "@angular/compiler-cli": "~11.2.6",
     "@types/jasmine": "~3.6.0",
